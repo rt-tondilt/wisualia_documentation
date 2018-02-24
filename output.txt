@@ -1,4 +1,4 @@
-Results of doctest builder run on 2018-02-24 21:29:42
+Results of doctest builder run on 2018-02-24 21:52:21
 =====================================================
 
 Document: tutorial/getting_started
