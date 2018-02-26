@@ -44,8 +44,23 @@
 <span class="kn">from</span>  <span class="nn">wisualia.geometry</span> <span class="k">import</span> <span class="n">PointLike</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">radians</span>
 
+<div class="viewcode-block" id="DoNothing"><a class="viewcode-back" href="../../_apidoc/wisualia.modifiers.html#wisualia.modifiers.DoNothing">[docs]</a><span class="nd">@derive_repr</span>
+<span class="k">class</span> <span class="nc">DoNothing</span><span class="p">(</span><span class="n">Modifier</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Literally does nothing.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+<div class="viewcode-block" id="DoNothing.modify"><a class="viewcode-back" href="../../_apidoc/wisualia.modifiers.html#wisualia.modifiers.DoNothing.modify">[docs]</a>    <span class="k">def</span> <span class="nf">modify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cr</span><span class="p">):</span> <span class="c1">#type: ignore</span>
+        <span class="k">pass</span></div></div>
+
 <div class="viewcode-block" id="Move"><a class="viewcode-back" href="../../_apidoc/wisualia.modifiers.html#wisualia.modifiers.Move">[docs]</a><span class="nd">@derive_repr</span>
 <span class="k">class</span> <span class="nc">Move</span><span class="p">(</span><span class="n">Modifier</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        x:</span>
+<span class="sd">        y:</span>
+
+<span class="sd">    Moves all values inside ``with`` statement with vector (x, y).</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -54,6 +69,13 @@
 
 <div class="viewcode-block" id="Rotate"><a class="viewcode-back" href="../../_apidoc/wisualia.modifiers.html#wisualia.modifiers.Rotate">[docs]</a><span class="nd">@derive_repr</span>
 <span class="k">class</span> <span class="nc">Rotate</span><span class="p">(</span><span class="n">Modifier</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        degrees:</span>
+<span class="sd">        centre:</span>
+
+<span class="sd">    Rotates all values inside ``with`` by number of degrees around centre point.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">degrees</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">centre</span><span class="p">:</span><span class="n">PointLike</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">degrees</span> <span class="o">=</span> <span class="n">degrees</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">centre</span> <span class="o">=</span> <span class="n">centre</span>
@@ -64,6 +86,14 @@
 
 <div class="viewcode-block" id="Scale"><a class="viewcode-back" href="../../_apidoc/wisualia.modifiers.html#wisualia.modifiers.Scale">[docs]</a><span class="nd">@derive_repr</span>
 <span class="k">class</span> <span class="nc">Scale</span><span class="p">(</span><span class="n">Modifier</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        factors:</span>
+<span class="sd">        centre:</span>
+
+<span class="sd">    Scales all values inside ``with`` by given factors and with given centre</span>
+<span class="sd">    point.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factors</span><span class="p">:</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">centre</span><span class="p">:</span><span class="n">PointLike</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">factors</span> <span class="o">=</span> <span class="n">factors</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">centre</span> <span class="o">=</span> <span class="n">centre</span>

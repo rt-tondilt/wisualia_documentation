@@ -43,9 +43,34 @@
   <div class="section" id="module-wisualia.modifiers">
 <span id="wisualia-modifiers-module"></span><h1>wisualia.modifiers module<a class="headerlink" href="#module-wisualia.modifiers" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
+<dt id="wisualia.modifiers.DoNothing">
+<em class="property">class </em><code class="descclassname">wisualia.modifiers.</code><code class="descname">DoNothing</code><a class="reference internal" href="../_modules/wisualia/modifiers.html#DoNothing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.DoNothing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="wisualia.core.html#wisualia.core.Modifier" title="wisualia.core.Modifier"><code class="xref py py-class docutils literal"><span class="pre">wisualia.core.Modifier</span></code></a></p>
+<p>Literally does nothing.</p>
+<dl class="method">
+<dt id="wisualia.modifiers.DoNothing.modify">
+<code class="descname">modify</code><span class="sig-paren">(</span><em>cr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#DoNothing.modify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.DoNothing.modify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="wisualia.modifiers.Move">
 <em class="property">class </em><code class="descclassname">wisualia.modifiers.</code><code class="descname">Move</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#Move"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.Move" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="wisualia.core.html#wisualia.core.Modifier" title="wisualia.core.Modifier"><code class="xref py py-class docutils literal"><span class="pre">wisualia.core.Modifier</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) – </li>
+<li><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Moves all values inside <code class="docutils literal"><span class="pre">with</span></code> statement with vector (x, y).</p>
 <dl class="method">
 <dt id="wisualia.modifiers.Move.modify">
 <code class="descname">modify</code><span class="sig-paren">(</span><em>cr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#Move.modify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.Move.modify" title="Permalink to this definition">¶</a></dt>
@@ -57,6 +82,19 @@
 <dt id="wisualia.modifiers.Rotate">
 <em class="property">class </em><code class="descclassname">wisualia.modifiers.</code><code class="descname">Rotate</code><span class="sig-paren">(</span><em>degrees</em>, <em>centre=(0</em>, <em>0)</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#Rotate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.Rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="wisualia.core.html#wisualia.core.Modifier" title="wisualia.core.Modifier"><code class="xref py py-class docutils literal"><span class="pre">wisualia.core.Modifier</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>degrees</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) – </li>
+<li><strong>centre</strong> (<a class="reference internal" href="wisualia.geometry.html#wisualia.geometry.PointLike" title="wisualia.geometry.PointLike"><code class="xref py py-class docutils literal"><span class="pre">PointLike</span></code></a>[]) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Rotates all values inside <code class="docutils literal"><span class="pre">with</span></code> by number of degrees around centre point.</p>
 <dl class="method">
 <dt id="wisualia.modifiers.Rotate.modify">
 <code class="descname">modify</code><span class="sig-paren">(</span><em>cr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#Rotate.modify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.Rotate.modify" title="Permalink to this definition">¶</a></dt>
@@ -68,6 +106,20 @@
 <dt id="wisualia.modifiers.Scale">
 <em class="property">class </em><code class="descclassname">wisualia.modifiers.</code><code class="descname">Scale</code><span class="sig-paren">(</span><em>factors</em>, <em>centre=(0</em>, <em>0)</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#Scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.Scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="wisualia.core.html#wisualia.core.Modifier" title="wisualia.core.Modifier"><code class="xref py py-class docutils literal"><span class="pre">wisualia.core.Modifier</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>factors</strong> (<code class="xref py py-class docutils literal"><span class="pre">Tuple</span></code>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>]) – </li>
+<li><strong>centre</strong> (<a class="reference internal" href="wisualia.geometry.html#wisualia.geometry.PointLike" title="wisualia.geometry.PointLike"><code class="xref py py-class docutils literal"><span class="pre">PointLike</span></code></a>[]) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Scales all values inside <code class="docutils literal"><span class="pre">with</span></code> by given factors and with given centre
+point.</p>
 <dl class="method">
 <dt id="wisualia.modifiers.Scale.modify">
 <code class="descname">modify</code><span class="sig-paren">(</span><em>cr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/wisualia/modifiers.html#Scale.modify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#wisualia.modifiers.Scale.modify" title="Permalink to this definition">¶</a></dt>

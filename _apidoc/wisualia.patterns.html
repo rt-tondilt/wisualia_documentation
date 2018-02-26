@@ -142,25 +142,22 @@ range will be clamped.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>start</strong> (<a class="reference internal" href="wisualia.geometry.html#wisualia.geometry.PointLike" title="wisualia.geometry.PointLike"><code class="xref py py-class docutils literal"><span class="pre">PointLike</span></code></a>[]) – starting point of the line</li>
 <li><strong>end</strong> (<a class="reference internal" href="wisualia.geometry.html#wisualia.geometry.PointLike" title="wisualia.geometry.PointLike"><code class="xref py py-class docutils literal"><span class="pre">PointLike</span></code></a>[]) – ending point of the line</li>
 <li><strong>color_stops</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Sequence" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Sequence</span></code></a>[<code class="xref py py-class docutils literal"><span class="pre">Tuple</span></code>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference internal" href="#wisualia.patterns.RGBA" title="wisualia.patterns.RGBA"><code class="xref py py-class docutils literal"><span class="pre">RGBA</span></code></a>]]) – relative locations on the gradient control vector</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-<p>Creates linear gradient along a straight line.
-Selgitus saa oled.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wisualia.patterns.Pattern" title="wisualia.patterns.Pattern"><code class="xref py py-class docutils literal"><span class="pre">Pattern</span></code></a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wisualia.patterns.Pattern" title="wisualia.patterns.Pattern"><code class="xref py py-class docutils literal"><span class="pre">Pattern</span></code></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Pattern object.</p>
+</td>
 </tr>
 </tbody>
 </table>
+<p>Creates linear gradient along a straight line.</p>
 </dd></dl>
 
 <dl class="function">
@@ -170,10 +167,24 @@ Selgitus saa oled.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wisualia.patterns.Pattern" title="wisualia.patterns.Pattern"><code class="xref py py-class docutils literal"><span class="pre">Pattern</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_centre</strong> (<a class="reference internal" href="wisualia.geometry.html#wisualia.geometry.PointLike" title="wisualia.geometry.PointLike"><code class="xref py py-class docutils literal"><span class="pre">PointLike</span></code></a>[]) – </li>
+<li><strong>start_radius</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) – </li>
+<li><strong>end_centre</strong> (<a class="reference internal" href="wisualia.geometry.html#wisualia.geometry.PointLike" title="wisualia.geometry.PointLike"><code class="xref py py-class docutils literal"><span class="pre">PointLike</span></code></a>[]) – </li>
+<li><strong>end_radius</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) – </li>
+<li><strong>color_stops</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/typing.html#typing.Sequence" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Sequence</span></code></a>[<code class="xref py py-class docutils literal"><span class="pre">Tuple</span></code>[<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>, <a class="reference internal" href="#wisualia.patterns.RGBA" title="wisualia.patterns.RGBA"><code class="xref py py-class docutils literal"><span class="pre">RGBA</span></code></a>]]) – relative locations on the gradient control vector</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wisualia.patterns.Pattern" title="wisualia.patterns.Pattern"><code class="xref py py-class docutils literal"><span class="pre">Pattern</span></code></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Pattern object.</p>
+</td>
 </tr>
 </tbody>
 </table>
+<p>Creates radial gradient along a straight line.</p>
 </dd></dl>
 
 <dl class="function">
@@ -183,10 +194,21 @@ Selgitus saa oled.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#wisualia.patterns.Pattern" title="wisualia.patterns.Pattern"><code class="xref py py-class docutils literal"><span class="pre">Pattern</span></code></a></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<a class="reference internal" href="wisualia.image.html#wisualia.image.Image" title="wisualia.image.Image"><code class="xref py py-class docutils literal"><span class="pre">Image</span></code></a>) – </li>
+<li><strong>pixels_per_unit</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#wisualia.patterns.Pattern" title="wisualia.patterns.Pattern"><code class="xref py py-class docutils literal"><span class="pre">Pattern</span></code></a></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A Pattern object.</p>
+</td>
 </tr>
 </tbody>
 </table>
+<p>Creates ImagePattern.</p>
 </dd></dl>
 
 </div>

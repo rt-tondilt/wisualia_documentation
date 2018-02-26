@@ -156,9 +156,10 @@
 <span class="sd">        start: starting point of the line</span>
 <span class="sd">        end: ending point of the line</span>
 <span class="sd">        color_stops: relative locations on the gradient control vector</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A Pattern object.</span>
 
 <span class="sd">    Creates linear gradient along a straight line.</span>
-<span class="sd">    Selgitus saa oled.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">gradient</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">LinearGradient</span><span class="p">(</span><span class="o">*</span><span class="n">start</span><span class="p">,</span> <span class="o">*</span><span class="n">end</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">offset</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">color_stops</span><span class="p">:</span>
@@ -170,6 +171,18 @@
                    <span class="n">end_centre</span><span class="p">:</span><span class="n">PointLike</span><span class="p">,</span>
                    <span class="n">end_radius</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span>
                    <span class="n">color_stops</span><span class="p">:</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">RGBA</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Pattern</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        start_centre:</span>
+<span class="sd">        start_radius:</span>
+<span class="sd">        end_centre:</span>
+<span class="sd">        end_radius:</span>
+<span class="sd">        color_stops: relative locations on the gradient control vector</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A Pattern object.</span>
+
+<span class="sd">    Creates radial gradient along a straight line.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">gradient</span> <span class="o">=</span> <span class="n">cairo</span><span class="o">.</span><span class="n">RadialGradient</span><span class="p">(</span><span class="o">*</span><span class="n">start_centre</span><span class="p">,</span> <span class="n">start_radius</span><span class="p">,</span>
                                     <span class="o">*</span><span class="n">end_centre</span><span class="p">,</span> <span class="n">end_radius</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">offset</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">color_stops</span><span class="p">:</span>
@@ -177,12 +190,21 @@
     <span class="k">return</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">gradient</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="ImagePattern"><a class="viewcode-back" href="../../_apidoc/wisualia.patterns.html#wisualia.patterns.ImagePattern">[docs]</a><span class="k">def</span> <span class="nf">ImagePattern</span><span class="p">(</span><span class="n">image</span><span class="p">:</span><span class="n">Image</span><span class="p">,</span> <span class="n">pixels_per_unit</span><span class="p">:</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pattern</span><span class="p">:</span>
-        <span class="n">cr</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">context</span>
-        <span class="n">cr</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-        <span class="n">cr</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">pixels_per_unit</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">pixels_per_unit</span><span class="p">)</span>
-        <span class="n">pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">SurfacePattern</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">surf</span><span class="p">))</span>
-        <span class="n">cr</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">pattern</span></div>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        image:</span>
+<span class="sd">        pixels_per_unit:</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A Pattern object.</span>
+
+<span class="sd">    Creates ImagePattern.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">cr</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">context</span>
+    <span class="n">cr</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">cr</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">pixels_per_unit</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">pixels_per_unit</span><span class="p">)</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">cairo</span><span class="o">.</span><span class="n">SurfacePattern</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">surf</span><span class="p">))</span>
+    <span class="n">cr</span><span class="o">.</span><span class="n">restore</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">pattern</span></div>
 
 
 <span class="n">RED</span> <span class="o">=</span> <span class="n">RGBA</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
