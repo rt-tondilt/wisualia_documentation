@@ -259,12 +259,14 @@ or changing the time).</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wisualia</span>
 <span class="kn">from</span> <span class="nn">wisualia.animation</span> <span class="k">import</span> <span class="n">animate</span>
 <span class="kn">from</span> <span class="nn">wisualia.shapes</span> <span class="k">import</span> <span class="n">circle</span>
+<span class="kn">from</span> <span class="nn">wisualia.do</span> <span class="k">import</span> <span class="n">fill</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">n</span>
     <span class="n">circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">fill</span><span class="p">()</span>
     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="n">animate</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
@@ -273,6 +275,7 @@ or changing the time).</p>
 <p><strong>Don’t change imported modules at runtime.</strong> For example lets say that you have
 following code inside the editor and it is displaying a rectangle.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wisualia</span>
+<span class="kn">from</span> <span class="nn">wisualia.do</span> <span class="k">import</span> <span class="n">fill</span>
 <span class="kn">from</span> <span class="nn">wisualia.animation</span> <span class="k">import</span> <span class="n">animate</span>
 <span class="kn">from</span> <span class="nn">wisualia</span> <span class="k">import</span> <span class="n">shapes</span>
 
@@ -280,12 +283,14 @@ following code inside the editor and it is displaying a rectangle.</p>
 
 <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">wisualia</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">fill</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Drawing completed&#39;</span><span class="p">)</span>
 <span class="n">animate</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now lets comment away this stupid assignment by inserting the <code class="docutils literal"><span class="pre">#</span></code> symbol.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wisualia</span>
+<span class="kn">from</span> <span class="nn">wisualia.do</span> <span class="k">import</span> <span class="n">fill</span>
 <span class="kn">from</span> <span class="nn">wisualia.animation</span> <span class="k">import</span> <span class="n">animate</span>
 <span class="kn">from</span> <span class="nn">wisualia</span> <span class="k">import</span> <span class="n">shapes</span>
 
@@ -293,6 +298,7 @@ following code inside the editor and it is displaying a rectangle.</p>
 
 <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="n">wisualia</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">fill</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Drawing completed&#39;</span><span class="p">)</span>
 <span class="n">animate</span><span class="p">(</span><span class="n">loop</span><span class="p">)</span>
 </pre></div>
